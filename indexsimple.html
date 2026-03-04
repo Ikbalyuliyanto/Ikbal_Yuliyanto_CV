@@ -6,51 +6,51 @@
 <title>CV — Ikbal Yuliyanto</title>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-:root{--ink:#111;--sub:#333;--muted:#666;--accent:;--green:#006644;--border:#ddd;--bg:#black;--white:#fff}
+:root{--ink:#111;--sub:#333;--muted:#666;--accent:#0052cc;--green:#006644;--border:#ddd;--bg:#f0f2f5;--white:#fff}
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:'IBM Plex Sans',sans-serif;background:var(--bg);color:var(--ink);padding:24px 16px 48px;font-size:14px;line-height:1.6}
 .pbar{position:fixed;top:16px;right:16px;z-index:99;display:flex;gap:8px}
-.pbtn{background:var(--accent);color:#black;border:none;padding:9px 20px;border-radius:4px;font-size:12.5px;font-weight:600;cursor:pointer;font-family:'IBM Plex Sans',sans-serif;transition:background .2s}
-
+.pbtn{background:var(--accent);color:#fff;border:none;padding:9px 20px;border-radius:4px;font-size:12.5px;font-weight:600;cursor:pointer;font-family:'IBM Plex Sans',sans-serif;transition:background .2s}
+.pbtn:hover{background:#003d99}
 .cv{max-width:820px;margin:0 auto;background:var(--white);border:1px solid var(--border);box-shadow:0 4px 24px rgba(0,0,0,.1)}
 
 /* ── HEADER ── */
-.topbar{background:var(--accent);color:#black;padding:28px 36px 24px;display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center}
+.topbar{background:#0052cc;color:#fff;padding:28px 36px 24px;display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center}
 .tb-left h1{font-size:27px;font-weight:700;letter-spacing:-.3px;margin-bottom:3px}
 .tb-left .role{font-size:13.5px;font-weight:400;opacity:.85;margin-bottom:10px}
 .tb-left .meta{display:flex;flex-wrap:wrap;gap:4px 18px;font-size:12px;opacity:.85}
-.tb-left .meta a{color:#black;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.4)}
-.avail{display:inline-block;background:#006644;color:#black;font-size:11px;font-weight:700;padding:4px 12px;border-radius:3px;margin-top:10px;letter-spacing:.08em}
+.tb-left .meta a{color:#fff;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.4)}
+.avail{display:inline-block;background:#006644;color:#fff;font-size:11px;font-weight:700;padding:4px 12px;border-radius:3px;margin-top:10px;letter-spacing:.08em}
 .avail::before{content:'● ';color:#7fffd4}
 
 /* FOTO */
-.foto-wrap{width:100px;height:130px;border-radius:10px;overflow:hidden;border:3px solid rgba(255,255,255,.35);background:;flex-shrink:0;display:flex;align-items:center;justify-content:center}
+.foto-wrap{width:100px;height:130px;border-radius:10px;overflow:hidden;border:3px solid rgba(255,255,255,.35);background:#1a3a6e;flex-shrink:0;display:flex;align-items:center;justify-content:center}
 .foto-wrap img{width:100%;height:100%;object-fit:cover;object-position:center top}
 
 /* ── BODY ── */
 .cvbody{padding:26px 36px}
 .sec{margin-bottom:22px}
 .sec:last-child{margin-bottom:0}
-.sh{font-size:10.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);border-bottom:2px solid var(--accent);padding-bottom:5px;margin-bottom:13px}
+.sh{font-size:10.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#0052cc;border-bottom:2px solid #0052cc;padding-bottom:5px;margin-bottom:13px}
 
 .summary{font-size:13.5px;color:var(--sub);line-height:1.78}
 
 /* EXP */
 .ej{margin-bottom:15px;padding-left:14px;border-left:2px solid #e0e6f5;position:relative}
-.ej::before{content:'';position:absolute;top:6px;left:-5px;width:8px;height:8px;border-radius:50%;background:var(--accent)}
+.ej::before{content:'';position:absolute;top:6px;left:-5px;width:8px;height:8px;border-radius:50%;background:#0052cc}
 .ej:last-child{margin-bottom:0}
 .ej-top{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:4px;margin-bottom:1px}
 .ej-company{font-size:13.5px;font-weight:700}
-.ej-period{font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:var(--muted);background:var(--bg);padding:1px 8px;border-radius:3px}
-.ej-role{font-size:12px;font-weight:600;color:var(--accent);margin-bottom:5px}
+.ej-period{font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:var(--muted);background:#f0f2f5;padding:1px 8px;border-radius:3px}
+.ej-role{font-size:12px;font-weight:600;color:#0052cc;margin-bottom:5px}
 .ej ul{margin-left:14px;color:var(--sub);font-size:12.5px}
 .ej ul li{margin-bottom:3px;line-height:1.5}
 
 /* PROJECTS */
-.pj{background:#f5f7ff;border:1px solid #d0d9f5;border-left:3px solid var(--accent);padding:13px 15px;margin-bottom:10px;border-radius:0 4px 4px 0}
+.pj{background:#f5f7ff;border:1px solid #d0d9f5;border-left:3px solid #0052cc;padding:13px 15px;margin-bottom:10px;border-radius:0 4px 4px 0}
 .pj:last-child{margin-bottom:0}
 .pj-name{font-size:13.5px;font-weight:700;margin-bottom:1px}
-.pj-role{font-size:11.5px;font-weight:600;color:var(--accent);margin-bottom:5px}
+.pj-role{font-size:11.5px;font-weight:600;color:#0052cc;margin-bottom:5px}
 .pj-desc{font-size:12.5px;color:var(--sub);line-height:1.58;margin-bottom:7px}
 .tags{display:flex;flex-wrap:wrap;gap:5px}
 .tag{background:#e8f0fe;color:#0052cc;font-size:10.5px;padding:2px 9px;border-radius:3px;font-family:'IBM Plex Mono',monospace}
@@ -65,19 +65,65 @@ body{font-family:'IBM Plex Sans',sans-serif;background:var(--bg);color:var(--ink
 .edu{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:4px}
 .edu-deg{font-size:13.5px;font-weight:700}
 .edu-school{font-size:12px;color:var(--muted)}
-.edu-year{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);background:var(--bg);padding:2px 8px;border-radius:3px}
+.edu-year{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);background:#f0f2f5;padding:2px 8px;border-radius:3px}
 
-.cvfoot{background:var(--bg);border-top:1px solid var(--border);padding:11px 36px;display:flex;justify-content:space-between;font-size:11px;color:var(--muted);font-family:'IBM Plex Mono',monospace}
+.cvfoot{background:#f0f2f5;border-top:1px solid var(--border);padding:11px 36px;display:flex;justify-content:space-between;font-size:11px;color:var(--muted);font-family:'IBM Plex Mono',monospace}
 
-@media print{
-  body{background:white;padding:0}
-  .pbar{display:none}
-  .cv{box-shadow:none;border:none;max-width:100%}
-  .topbar{padding:22px 30px 18px}
-  .cvbody{padding:20px 30px}
-  .sec{margin-bottom:16px}
-  -webkit-print-color-adjust:exact;print-color-adjust:exact
+/* ─────────────────────────────────────────
+   PRINT STYLES — Paksa warna & background tampil
+───────────────────────────────────────── */
+@media print {
+  /* Paksa browser cetak background color & image */
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    color-adjust: exact !important;
+  }
+
+  body { background: white !important; padding: 0 !important; }
+  .pbar { display: none !important; }
+  .cv { box-shadow: none !important; border: none !important; max-width: 100% !important; }
+
+  /* Header biru — paksa solid */
+  .topbar {
+    background: #0052cc !important;
+    color: #fff !important;
+    padding: 22px 30px 18px !important;
+  }
+
+  /* Badge hijau */
+  .avail { background: #006644 !important; color: #fff !important; }
+
+  /* Section heading biru */
+  .sh { color: #0052cc !important; border-bottom-color: #0052cc !important; }
+
+  /* Dot experience */
+  .ej::before { background: #0052cc !important; }
+
+  /* Role biru */
+  .ej-role, .pj-role { color: #0052cc !important; }
+
+  /* Project card background */
+  .pj {
+    background: #f5f7ff !important;
+    border-color: #d0d9f5 !important;
+    border-left-color: #0052cc !important;
+  }
+
+  /* Tags */
+  .tag { background: #e8f0fe !important; color: #0052cc !important; }
+  .tag.g { background: #e3f5ec !important; color: #006644 !important; }
+
+  /* Period badge & footer */
+  .ej-period, .edu-year { background: #f0f2f5 !important; }
+  .cvfoot { background: #f0f2f5 !important; }
+
+  .cvbody { padding: 20px 30px !important; }
+  .sec { margin-bottom: 16px !important; }
+
+  @page { margin: 0; size: A4; }
 }
+
 @media(max-width:620px){
   .topbar{grid-template-columns:1fr;gap:16px}
   .foto-wrap{width:80px;height:104px}
@@ -88,9 +134,29 @@ body{font-family:'IBM Plex Sans',sans-serif;background:var(--bg);color:var(--ink
 </style>
 </head>
 <body>
-<div class="pbar">
-  <button class="pbtn" onclick="window.print()">⬇ Download PDF</button>
+
+<!-- Modal panduan download -->
+<div id="guide-modal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:999;align-items:center;justify-content:center">
+  <div style="background:#fff;border-radius:10px;padding:28px 32px;max-width:420px;width:90%;font-family:'IBM Plex Sans',sans-serif;box-shadow:0 8px 40px rgba(0,0,0,.3)">
+    <h3 style="margin-bottom:12px;font-size:16px;color:#0052cc">📄 Cara Download PDF dengan Warna Lengkap</h3>
+    <ol style="padding-left:18px;line-height:2;font-size:13.5px;color:#333">
+      <li>Klik tombol <strong>"Print / Cetak"</strong> di bawah</li>
+      <li>Di dialog print, pilih <strong>Destination → Save as PDF</strong></li>
+      <li>Klik <strong>"More settings"</strong> (atau Opsi Lanjutan)</li>
+      <li>Centang ✅ <strong>"Background graphics"</strong> (Grafis Latar Belakang)</li>
+      <li>Klik <strong>Save</strong></li>
+    </ol>
+    <div style="display:flex;gap:10px;margin-top:20px">
+      <button onclick="document.getElementById('guide-modal').style.display='none';window.print()" style="flex:1;background:#0052cc;color:#fff;border:none;padding:10px;border-radius:5px;font-size:13px;font-weight:700;cursor:pointer">🖨️ Print Sekarang</button>
+      <button onclick="document.getElementById('guide-modal').style.display='none'" style="flex:1;background:#eee;color:#333;border:none;padding:10px;border-radius:5px;font-size:13px;cursor:pointer">Tutup</button>
+    </div>
+  </div>
 </div>
+
+<div class="pbar">
+  <button class="pbtn" onclick="document.getElementById('guide-modal').style.display='flex'">⬇ Download PDF</button>
+</div>
+
 <div class="cv">
 
   <div class="topbar">
@@ -238,16 +304,6 @@ body{font-family:'IBM Plex Sans',sans-serif;background:var(--bg);color:var(--ink
     <span>ashanum.com · linkedin.com/in/ikbal-yuliyanto</span>
   </div>
 </div>
-<script>
-window.addEventListener('load',()=>{
-  setTimeout(()=>{
-    const d=document.createElement('div');
-    d.style.cssText='position:fixed;bottom:16px;right:16px;background:#111;color:#fff;padding:10px 16px;border-radius:4px;font-size:12px;font-family:sans-serif;z-index:99;line-height:1.5;max-width:240px;';
-    d.innerHTML='';
-    document.body.appendChild(d);
-    setTimeout(()=>d.remove(),7000);
-  },600);
-});
-</script>
+
 </body>
 </html>
