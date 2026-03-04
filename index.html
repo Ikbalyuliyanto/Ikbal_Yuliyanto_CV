@@ -1,650 +1,301 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV - Ikbal Yuliyanto</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            padding: 20px;
-            line-height: 1.6;
-        }
-        
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            background: white;
-            box-shadow: 0 15px 50px rgba(0,0,0,0.2);
-            border-radius: 12px;
-            overflow: hidden;
-        }
-        
-        .action-buttons {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            display: flex;
-            gap: 10px;
-            z-index: 1000;
-        }
-        
-        .btn {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 12px 25px;
-            border: none;
-            border-radius: 25px;
-            font-size: 14px;
-            font-weight: 600;
-            cursor: pointer;
-            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
-            transition: all 0.3s ease;
-        }
-        
-        .btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.6);
-        }
-        
-        .header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 40px 50px;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .header::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -10%;
-            width: 400px;
-            height: 400px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-        }
-        
-        .header-content {
-            position: relative;
-            z-index: 1;
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 30px;
-            align-items: center;
-        }
-        
-        .header-left h1 {
-            font-size: 3.5em;
-            margin-bottom: 10px;
-            font-weight: 700;
-        }
-        
-        .header-left .subtitle {
-            font-size: 1.5em;
-            opacity: 0.95;
-            margin-bottom: 8px;
-        }
-        
-        .header-left .tech-stack {
-            font-size: 1.1em;
-            opacity: 0.85;
-        }
-        
-        .contact-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 12px;
-        }
-        
-        .contact-item {
-            background: rgba(255, 255, 255, 0.2);
-            padding: 12px 18px;
-            border-radius: 8px;
-            backdrop-filter: blur(10px);
-            font-size: 0.95em;
-        }
-        
-        .contact-item a {
-            color: white;
-            text-decoration: none;
-        }
-        
-        .content {
-            padding: 40px 50px;
-        }
-        
-        .two-column {
-            display: grid;
-            grid-template-columns: 1.2fr 0.8fr;
-            gap: 40px;
-        }
-        
-        .section {
-            margin-bottom: 35px;
-        }
-        
-        .section-title {
-            font-size: 1.5em;
-            color: #2c3e50;
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 3px solid;
-            border-image: linear-gradient(to right, #667eea, #764ba2) 1;
-            font-weight: 600;
-        }
-        
-        .profile-text {
-            text-align: justify;
-            color: #555;
-            line-height: 1.8;
-            font-size: 0.95em;
-        }
-        
-        .skills-grid {
-            display: grid;
-            gap: 15px;
-        }
-        
-        .skill-card {
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-            padding: 18px;
-            border-radius: 8px;
-            border-left: 4px solid #667eea;
-        }
-        
-        .skill-card h4 {
-            color: #2c3e50;
-            margin-bottom: 8px;
-            font-size: 1em;
-            font-weight: 600;
-        }
-        
-        .skill-card p {
-            color: #666;
-            font-size: 0.88em;
-            line-height: 1.6;
-        }
-        
-        .experience-card {
-            margin-bottom: 25px;
-            padding: 20px;
-            background: #fafbfc;
-            border-radius: 8px;
-            border-left: 4px solid #667eea;
-        }
-        
-        .experience-card h3 {
-            color: #2c3e50;
-            font-size: 1.2em;
-            margin-bottom: 6px;
-            font-weight: 600;
-        }
-        
-        .experience-card .role {
-            color: #667eea;
-            font-weight: 600;
-            font-size: 1em;
-            margin-bottom: 5px;
-        }
-        
-        .experience-card .period {
-            color: #999;
-            font-size: 0.85em;
-            margin-bottom: 12px;
-            display: inline-block;
-            background: #e8eaf6;
-            padding: 3px 10px;
-            border-radius: 12px;
-        }
-        
-        .experience-card ul {
-            margin-left: 18px;
-            color: #555;
-        }
-        
-        .experience-card ul li {
-            margin-bottom: 8px;
-            font-size: 0.9em;
-            line-height: 1.6;
-        }
-        
-        .project-highlight {
-            background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
-            padding: 25px;
-            border-radius: 10px;
-            border: 2px solid #667eea30;
-            margin-bottom: 20px;
-        }
-        
-        .project-highlight h3 {
-            color: #2c3e50;
-            font-size: 1.3em;
-            margin-bottom: 6px;
-            font-weight: 600;
-        }
-        
-        .project-highlight .role {
-            color: #667eea;
-            font-weight: 600;
-            margin-bottom: 12px;
-            display: block;
-        }
-        
-        .project-highlight p {
-            color: #555;
-            line-height: 1.7;
-            margin-bottom: 15px;
-            font-size: 0.92em;
-        }
-        
-        .tech-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-top: 12px;
-        }
-        
-        .tech-tag {
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: white;
-            padding: 5px 14px;
-            border-radius: 15px;
-            font-size: 0.82em;
-            font-weight: 500;
-        }
-        
-        .education-box {
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-            padding: 18px;
-            border-radius: 8px;
-            border-left: 4px solid #667eea;
-        }
-        
-        .education-box strong {
-            color: #2c3e50;
-            font-size: 1.05em;
-            display: block;
-            margin-bottom: 6px;
-        }
-        
-        .education-box p {
-            color: #666;
-            font-size: 0.92em;
-        }
-        
-        .strengths-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 12px;
-        }
-        
-        .strength-card {
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: white;
-            padding: 15px;
-            border-radius: 8px;
-            text-align: center;
-            font-weight: 600;
-            font-size: 0.9em;
-        }
-        
-        @media print {
-            body {
-                background: white;
-                padding: 0;
-                line-height: 1.4;
-            }
-            .container {
-                box-shadow: none;
-                max-width: 100%;
-                border-radius: 0;
-            }
-            .action-buttons {
-                display: none;
-            }
-            .header {
-                padding: 30px 40px;
-            }
-            .header-left h1 {
-                font-size: 2.8em;
-                margin-bottom: 5px;
-            }
-            .header-left .subtitle {
-                font-size: 1.2em;
-                margin-bottom: 4px;
-            }
-            .header-left .tech-stack {
-                font-size: 0.95em;
-            }
-            .contact-grid {
-                gap: 8px;
-            }
-            .contact-item {
-                padding: 8px 12px;
-                font-size: 0.85em;
-            }
-            .content {
-                padding: 25px 40px;
-            }
-            .section {
-                margin-bottom: 20px;
-                page-break-inside: avoid;
-            }
-            .section-title {
-                font-size: 1.3em;
-                margin-bottom: 12px;
-                padding-bottom: 6px;
-            }
-            .profile-text {
-                font-size: 0.88em;
-                line-height: 1.5;
-            }
-            .two-column {
-                gap: 25px;
-            }
-            .experience-card {
-                margin-bottom: 15px;
-                padding: 14px;
-                page-break-inside: avoid;
-            }
-            .experience-card h3 {
-                font-size: 1.05em;
-                margin-bottom: 4px;
-            }
-            .experience-card .role {
-                font-size: 0.92em;
-                margin-bottom: 3px;
-            }
-            .experience-card .period {
-                font-size: 0.8em;
-                margin-bottom: 8px;
-                padding: 2px 8px;
-            }
-            .experience-card ul {
-                margin-left: 16px;
-            }
-            .experience-card ul li {
-                margin-bottom: 5px;
-                font-size: 0.85em;
-                line-height: 1.4;
-            }
-            .project-highlight {
-                padding: 16px;
-                margin-bottom: 15px;
-                page-break-inside: avoid;
-            }
-            .project-highlight h3 {
-                font-size: 1.15em;
-                margin-bottom: 4px;
-            }
-            .project-highlight .role {
-                margin-bottom: 8px;
-                font-size: 0.9em;
-            }
-            .project-highlight p {
-                font-size: 0.85em;
-                line-height: 1.5;
-                margin-bottom: 10px;
-            }
-            .tech-tags {
-                gap: 6px;
-                margin-top: 8px;
-            }
-            .tech-tag {
-                padding: 4px 10px;
-                font-size: 0.75em;
-            }
-            .skill-card {
-                padding: 12px;
-                margin-bottom: 10px;
-            }
-            .skill-card h4 {
-                font-size: 0.92em;
-                margin-bottom: 6px;
-            }
-            .skill-card p {
-                font-size: 0.82em;
-                line-height: 1.4;
-            }
-            .education-box {
-                padding: 12px;
-            }
-            .education-box strong {
-                font-size: 0.95em;
-                margin-bottom: 4px;
-            }
-            .education-box p {
-                font-size: 0.85em;
-            }
-            .strengths-container {
-                gap: 8px;
-            }
-            .strength-card {
-                padding: 10px;
-                font-size: 0.82em;
-            }
-            .skills-grid {
-                gap: 10px;
-            }
-        }
-        
-        @media (max-width: 1200px) {
-            .two-column {
-                grid-template-columns: 1fr;
-            }
-            .header-content {
-                grid-template-columns: 1fr;
-            }
-        }
-        @media print {
-          body {
-              -webkit-print-color-adjust: exact;
-              print-color-adjust: exact;
-              background: white !important;
-          }
-
-          .header {
-              background: #444 !important;
-          }
-      }
-
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ikbal Yuliyanto — Full-Stack Developer</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#0d0d0d;--ink2:#2a2a2a;--muted:#6b7280;--light:#f4f3ef;--white:#ffffff;--accent:#1a1a2e;--gold:#c9a84c;--gold2:#e8c97a;--teal:#0f7173;--teal2:#14a0a3;--border:#e2e0d8;--card:#faf9f6}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'DM Sans',sans-serif;background:#ece9e0;color:var(--ink);min-height:100vh;padding:32px 16px 60px;line-height:1.6}
+.print-bar{position:fixed;top:20px;right:20px;z-index:999}
+.print-btn{background:var(--ink);color:#fff;border:none;padding:11px 22px;border-radius:6px;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.04em;transition:background .2s}
+.print-btn:hover{background:var(--teal)}
+.paper{max-width:1080px;margin:0 auto;background:var(--white);box-shadow:0 30px 80px rgba(0,0,0,.18)}
+.header{background:var(--accent);color:#fff;padding:52px 60px 44px;position:relative;overflow:hidden}
+.header::before{content:'';position:absolute;top:-80px;right:-80px;width:320px;height:320px;border-radius:50%;border:48px solid rgba(201,168,76,.12)}
+.header::after{content:'';position:absolute;bottom:-40px;left:40%;width:180px;height:180px;border-radius:50%;background:rgba(15,113,115,.18)}
+.header-inner{position:relative;z-index:1;display:grid;grid-template-columns:1fr auto;gap:40px;align-items:end}
+.eyebrow{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.2em;color:var(--gold2);text-transform:uppercase;margin-bottom:10px}
+.name-block h1{font-family:'Playfair Display',serif;font-size:54px;font-weight:900;line-height:1;letter-spacing:-1px;margin-bottom:12px}
+.name-block h1 span{color:var(--gold)}
+.title-line{font-size:15px;font-weight:500;color:rgba(255,255,255,.75);margin-bottom:6px}
+.stack-line{font-family:'DM Mono',monospace;font-size:11.5px;color:var(--teal2);letter-spacing:.08em}
+.availability{background:var(--teal);color:#fff;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:6px 18px;display:inline-flex;align-items:center;gap:6px;margin-top:16px}
+.availability::before{content:'';width:7px;height:7px;border-radius:50%;background:#7fffd4;animation:blink 1.4s ease-in-out infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+.contacts{display:flex;flex-direction:column;gap:9px;align-items:flex-end}
+.cpill{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);color:rgba(255,255,255,.85);padding:7px 15px;border-radius:4px;font-size:12px}
+.cpill a{color:var(--gold2);text-decoration:none}
+.body{display:grid;grid-template-columns:1fr 296px}
+.main-col{padding:44px 44px 44px 60px;border-right:1px solid var(--border)}
+.side-col{padding:44px 36px;background:var(--card)}
+.section{margin-bottom:38px}
+.section:last-child{margin-bottom:0}
+.sec-label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.25em;text-transform:uppercase;color:var(--teal);font-weight:500;margin-bottom:5px}
+.sec-title{font-family:'Playfair Display',serif;font-size:21px;font-weight:700;color:var(--ink);margin-bottom:18px;padding-bottom:10px;border-bottom:2px solid var(--border);position:relative}
+.sec-title::after{content:'';position:absolute;bottom:-2px;left:0;width:44px;height:2px;background:var(--gold)}
+.profile-text{color:#444;font-size:13.5px;line-height:1.85;text-align:justify}
+.exp-item{margin-bottom:24px;padding-left:18px;border-left:2px solid var(--border);position:relative}
+.exp-item::before{content:'';position:absolute;top:5px;left:-5px;width:8px;height:8px;border-radius:50%;background:var(--gold);border:2px solid var(--white);box-shadow:0 0 0 2px var(--gold)}
+.exp-item:last-child{margin-bottom:0}
+.exp-company{font-size:14.5px;font-weight:700;color:var(--ink);margin-bottom:2px}
+.exp-role{font-size:12.5px;font-weight:600;color:var(--teal);margin-bottom:4px}
+.exp-period{display:inline-block;font-family:'DM Mono',monospace;font-size:10px;color:var(--muted);background:var(--light);padding:2px 10px;border-radius:3px;margin-bottom:9px;letter-spacing:.05em}
+.exp-list{margin-left:14px;color:#4a4a4a;font-size:12.5px}
+.exp-list li{margin-bottom:5px;line-height:1.6}
+.fp{padding:24px 26px;border-radius:2px;margin-bottom:14px;position:relative;overflow:hidden}
+.fp.dark{background:linear-gradient(135deg,var(--accent) 0%,#16213e 100%);color:#fff}
+.fp.teal{background:linear-gradient(135deg,#0f3d3e,#0d5e60);color:#fff}
+.fp::before{content:'';position:absolute;top:-20px;right:-20px;width:110px;height:110px;border-radius:50%;background:rgba(201,168,76,.1)}
+.fp-badge{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.18em;color:var(--gold2);text-transform:uppercase;margin-bottom:7px}
+.fp.teal .fp-badge{color:#7fffd4}
+.fp-name{font-family:'Playfair Display',serif;font-size:19px;font-weight:700;margin-bottom:3px}
+.fp-role{font-size:12px;font-weight:600;color:var(--teal2);margin-bottom:11px}
+.fp.teal .fp-role{color:#7fffd4}
+.fp-desc{font-size:12.5px;line-height:1.75;color:rgba(255,255,255,.8);margin-bottom:14px}
+.fp-tags{display:flex;flex-wrap:wrap;gap:6px}
+.fp-tag{background:rgba(201,168,76,.2);border:1px solid rgba(201,168,76,.35);color:var(--gold2);font-size:10.5px;font-family:'DM Mono',monospace;padding:3px 11px;border-radius:3px}
+.fp.teal .fp-tag{background:rgba(127,255,212,.15);border-color:rgba(127,255,212,.3);color:#7fffd4}
+.side-sec{margin-bottom:28px}
+.side-sec:last-child{margin-bottom:0}
+.side-title{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:12px;padding-bottom:6px;border-bottom:1px solid var(--border)}
+.skill-group{margin-bottom:14px}
+.sg-name{font-size:11.5px;font-weight:700;color:var(--ink2);margin-bottom:7px}
+.skill-tags{display:flex;flex-wrap:wrap;gap:5px}
+.stag{background:var(--white);border:1px solid var(--border);color:var(--ink2);font-size:11px;padding:3px 9px;border-radius:3px;font-weight:500}
+.stag.p{background:var(--accent);color:var(--gold2);border-color:var(--accent);font-family:'DM Mono',monospace;font-size:10.5px}
+.edu-box{background:var(--white);border:1px solid var(--border);padding:15px;border-radius:2px;border-left:3px solid var(--gold)}
+.edu-degree{font-size:13px;font-weight:700;color:var(--ink);margin-bottom:3px}
+.edu-school{font-size:11.5px;color:var(--muted)}
+.edu-year{font-family:'DM Mono',monospace;font-size:11px;color:var(--teal);margin-top:4px}
+.str-grid{display:grid;grid-template-columns:1fr 1fr;gap:7px}
+.str-item{background:var(--white);border:1px solid var(--border);border-top:2px solid var(--teal);padding:9px 10px;text-align:center;font-size:11px;font-weight:600;color:var(--ink2);border-radius:2px;line-height:1.4}
+.footer-bar{background:var(--light);border-top:1px solid var(--border);padding:14px 60px;display:flex;align-items:center;justify-content:space-between}
+.mono{font-family:'DM Mono',monospace;font-size:11px;color:var(--muted);letter-spacing:.06em}
+@media print{
+  body{background:white;padding:0}
+  .print-bar{display:none}
+  .paper{box-shadow:none}
+  .header{padding:32px 44px 28px}
+  .name-block h1{font-size:40px}
+  .body{grid-template-columns:1fr 276px}
+  .main-col{padding:28px 34px 28px 44px}
+  .side-col{padding:28px 28px}
+  .section{margin-bottom:22px}
+  .exp-item{margin-bottom:16px}
+  .fp{padding:16px 18px;margin-bottom:10px}
+  -webkit-print-color-adjust:exact;print-color-adjust:exact
+}
+@media(max-width:800px){
+  .header-inner{grid-template-columns:1fr}
+  .contacts{align-items:flex-start}
+  .body{grid-template-columns:1fr}
+  .main-col{padding:28px 24px;border-right:none;border-bottom:1px solid var(--border)}
+  .side-col{padding:28px 24px}
+  .name-block h1{font-size:36px}
+  .print-bar{display:none}
+}
+</style>
 </head>
 <body>
-    <div class="action-buttons">
-        <button class="btn" onclick="downloadPDF()">💾 Download PDF</button>
+<div class="print-bar">
+  <button class="print-btn" onclick="window.print()">⬇ Download / Print PDF</button>
+</div>
+<div class="paper">
+  <div class="header">
+    <div class="header-inner">
+      <div class="name-block">
+        <div class="eyebrow">Full-Stack &amp; Backend Developer · 7+ Tahun</div>
+        <h1>IKBAL <span>YULIYANTO</span></h1>
+        <div class="title-line">Sistem Enterprise · E-Commerce · DevOps · Hardware Integration</div>
+        <div class="stack-line">PHP · Laravel · ASP.NET Core · Node.js · PostgreSQL · Docker · Linux · Nginx</div>
+        <div class="availability">Sedang Mencari Peluang Baru</div>
+      </div>
+      <div class="contacts">
+        <div class="cpill">📱 0895-3633-25620 / 0851-7222-5707</div>
+        <div class="cpill">📧 ikbaly94@gmail.com</div>
+        <div class="cpill">🔗 <a href="https://ikbalyuliyanto.github.io/Ikbal_Yuliyanto_CV/" target="_blank">Portfolio CV</a></div>
+        <div class="cpill">🌐 <a href="https://ashanum.com" target="_blank">ashanum.com</a> — Live Project</div>
+      </div>
     </div>
-    
-    <div class="container">
-        <div class="header">
-            <div class="header-content">
-                <div class="header-left">
-                    <h1>IKBAL YULIYANTO</h1>
-                    <div class="subtitle">Full-Stack / Backend Developer</div>
-                    <div class="tech-stack">PHP • Laravel • ASP.NET Core • Node.js</div>
-                </div>
-                
-                <div class="contact-grid">
-                    <div class="contact-item">📱 0895-3633-25620 / 0851-7222-5707</div>
-                    <div class="contact-item">📧 ikbaly94@gmail.com</div>
-                    <div class="contact-item">🔗 <a href="https://github.com/Ikbalyuliyanto" target="_blank">ikbalyuliyanto.github.io/Ikbal_Yuliyanto_CV/</a></div>
-                </div>
-            </div>
+  </div>
+
+  <div class="body">
+    <div class="main-col">
+
+      <div class="section">
+        <div class="sec-label">Tentang Saya</div>
+        <h2 class="sec-title">Profil Profesional</h2>
+        <p class="profile-text">Developer dengan pengalaman lebih dari <strong>7 tahun</strong> membangun aplikasi skala besar dari nol hingga produksi — sistem rumah sakit enterprise, POS, ticketing, inventory, hingga e-commerce mandiri. Mahir di seluruh stack: backend (PHP/Laravel, ASP.NET Core 6, Node.js/Express), database (PostgreSQL, MySQL, SQL Server), DevOps (Linux VPS, Docker, Nginx, CI/CD), serta integrasi perangkat fisik (Scanner KTP, printer POS, gate, kiosk). Terbukti mampu mengelola infrastruktur server production secara langsung — mulai hosting, domain, konfigurasi Nginx, Docker deployment, hingga go-live mandiri.</p>
+      </div>
+
+      <div class="section">
+        <div class="sec-label">Karier</div>
+        <h2 class="sec-title">Pengalaman Kerja</h2>
+        <div class="exp-item">
+          <div class="exp-company">PT Benari Solusindo Sejahtera</div>
+          <div class="exp-role">Full-Stack Developer &amp; System Integrator</div>
+          <span class="exp-period">2024 – Sekarang</span>
+          <ul class="exp-list">
+            <li>Membangun <strong>QuilvianSystem</strong> — HMS lengkap: pendaftaran, rekam medis, antrian, kasir, manajemen obat</li>
+            <li>Integrasi perangkat fisik: Scanner KTP, printer POS, gate elektronik</li>
+            <li>REST API multi-modul dengan ASP.NET Core 6 &amp; PostgreSQL; frontend Next.js</li>
+            <li>CI/CD otomatis via GitHub Actions + Docker</li>
+          </ul>
         </div>
-        
-        <div class="content">
-            <div class="section">
-                <h2 class="section-title">Profil Profesional</h2>
-                <p class="profile-text">
-                    Programmer dengan pengalaman lebih dari 7 tahun dalam pengembangan aplikasi skala besar, termasuk sistem rumah sakit, POS, ticketing, inventory, dan automasi chatbot. Berpengalaman sebagai Full-Stack Developer menggunakan PHP, Laravel, JavaScript, Node.js, dan ASP.NET Core 6. Menguasai Linux Server, Docker, PostgreSQL, CI/CD GitHub Workflow, serta integrasi perangkat fisik seperti Scanner KTP, printer POS, gate, dan kiosk. Mampu bekerja mandiri maupun kolaboratif dengan analisis sistem yang kuat.
-                </p>
-            </div>
-            
-            <div class="two-column">
-                <div class="left-column">
-                    <div class="section">
-                        <h2 class="section-title">Pengalaman Kerja</h2>
-                        
-                        <div class="experience-card">
-                            <h3>PT Benari Solusindo Sejahtera</h3>
-                            <div class="role">Full-Stack Developer & System Integrator</div>
-                            <span class="period">2024 – Sekarang</span>
-                            <ul>
-                                <li>Membangun dan mengembangkan sistem manajemen rumah sakit (QuilvianSystem), termasuk modul pendaftaran, rekam medis, antrian, kasir, manajemen obat</li>
-                                <li>Integrasi dengan perangkat fisik: Scanner KTP, printer POS, gate</li>
-                                <li>Mengembangkan API untuk mendukung sistem rumah sakit dan memastikan alur data berjalan lancar</li>
-                                <li>Menggunakan teknologi ASP.NET Core 6 untuk backend, Next.js untuk frontend, dan PostgreSQL untuk database</li>
-                                <li>Implementasi CI/CD menggunakan GitHub Actions untuk otomatisasi build & deployment</li>
-                            </ul>
-                        </div>
-                        
-                        <div class="experience-card">
-                            <h3>Sokka Kreatif Teknologi</h3>
-                            <div class="role">Full-Stack Developer</div>
-                            <span class="period">2023 – 2024</span>
-                            <ul>
-                                <li>Membangun sistem manajemen rumah sakit (ASP.NET Core 6, PostgreSQL, Docker)</li>
-                                <li>Integrasi dengan perangkat fisik: Scanner KTP, printer POS, gate</li>
-                                <li>Implementasi CI/CD menggunakan GitHub Workflow untuk otomatisasi build & deployment</li>
-                                <li>Optimasi API multi-module agar lebih cepat dan stabil</li>
-                            </ul>
-                        </div>
-                        
-                        <div class="experience-card">
-                            <h3>Saloka Theme Park</h3>
-                            <div class="role">Programmer</div>
-                            <span class="period">2020 – 2023</span>
-                            <ul>
-                                <li>Mengembangkan sistem operasional: SalokaPark v2, Gate Entry System, POS, Inventory System</li>
-                                <li>Integrasi hardware seperti printer POS, gate, scanner tiket, dan kiosk</li>
-                                <li>Maintenance 100+ perangkat dan monitoring server harian</li>
-                            </ul>
-                        </div>
-                        
-                        <div class="experience-card">
-                            <h3>Freelance Projects</h3>
-                            <div class="role">Full-Stack Developer</div>
-                            <span class="period">2016 – 2019</span>
-                            <ul>
-                                <li>Sistem Rekrutmen • Sistem Hotel berbasis Java • Sistem Pertanian • Surat Masuk/Keluar • Pendaftaran Sekolah Online</li>
-                            </ul>
-                        </div>
-                    </div>
-                    
-                    <div class="section">
-                        <h2 class="section-title">Projek Terbaru</h2>
-                        <div class="project-highlight">
-                            <h3>QuilvianSystem (2024–Sekarang)</h3>
-                            <span class="role">Full-Stack Developer & System Integrator</span>
-                            <p>Membangun dan mengembangkan sistem manajemen rumah sakit lengkap, termasuk modul pendaftaran, rekam medis, antrian, kasir, manajemen obat, dan integrasi dengan perangkat fisik seperti scanner KTP dan printer POS. Mengembangkan API untuk mendukung sistem rumah sakit dan memastikan alur data berjalan lancar.</p>
-                            <strong style="color: #2c3e50; font-size: 0.9em; display: block; margin-bottom: 8px;">Teknologi:</strong>
-                            <div class="tech-tags">
-                                <span class="tech-tag">ASP.NET Core 6</span>
-                                <span class="tech-tag">Next.js</span>
-                                <span class="tech-tag">PostgreSQL</span>
-                                <span class="tech-tag">SQL Server</span>
-                                <span class="tech-tag">Docker</span>
-                                <span class="tech-tag">GitHub Actions</span>
-                                <span class="tech-tag">Scanner KTP</span>
-                                <span class="tech-tag">Printer POS</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="section">
-                        <h2 class="section-title">Pengalaman Proyek Lainnya</h2>
-                        
-                        <div class="experience-card">
-                            <h3>IT Deployer Project (Bali & NTB)</h3>
-                            <span class="period">14 September 2018 – 28 September 2018</span>
-                            <ul>
-                                <li>Pemasangan CentOS 7 ke server, instalasi aplikasi DPRI dan Dokim</li>
-                                <li>Mengolah dan mengelola database DPRI dan Dokim</li>
-                                <li>Membantu implementasi aplikasi baru di kantor Imigrasi</li>
-                            </ul>
-                        </div>
-                        
-                        <div class="experience-card">
-                            <h3>Kantor Imigrasi Kelas 1 Jakarta Timur</h3>
-                            <span class="period">14 Desember 2018 – 31 Desember 2018</span>
-                            <ul>
-                                <li>Pengolahan database DPRI, Dokim, dan implementasi aplikasi baru</li>
-                                <li>Terlibat dalam praktek pembuatan paspor</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="right-column">
-                    <div class="section">
-                        <h2 class="section-title">Keahlian Utama</h2>
-                        <div class="skills-grid">
-                            <div class="skill-card">
-                                <h4>💻 Bahasa Pemrograman</h4>
-                                <p>PHP (Laravel), ASP.NET Core 6, JavaScript, jQuery, Node.js, SQL, HTML, CSS, Bootstrap</p>
-                            </div>
-                            <div class="skill-card">
-                                <h4>🗄️ Database</h4>
-                                <p>PostgreSQL, SQL Server, MySQL</p>
-                            </div>
-                            <div class="skill-card">
-                                <h4>🚀 Server & Deployment</h4>
-                                <p>Linux Server, Docker & Docker Compose, GitHub Actions (CI/CD), Apache/Nginx, REST API</p>
-                            </div>
-                            <div class="skill-card">
-                                <h4>🛠️ Tools</h4>
-                                <p>VS Code, SQL Server Management Studio, SQLyog, Postman, Git, Docker</p>
-                            </div>
-                            <div class="skill-card">
-                                <h4>🌐 Networking</h4>
-                                <p>Mikrotik, OpenWRT, VPN, RT/RW Net</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="section">
-                        <h2 class="section-title">Pendidikan</h2>
-                        <div class="education-box">
-                            <strong>D3 Manajemen Informatika</strong>
-                            <p>Universitas Nasional PASIM — 2015</p>
-                        </div>
-                    </div>
-                    
-                    <div class="section">
-                        <h2 class="section-title">Keunggulan</h2>
-                        <div class="strengths-container">
-                            <div class="strength-card">✨ Cepat Beradaptasi</div>
-                            <div class="strength-card">🔍 Analisis Kuat</div>
-                            <div class="strength-card">🔧 Integrasi HW/SW</div>
-                            <div class="strength-card">🤝 Komunikasi Baik</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="exp-item">
+          <div class="exp-company">Sokka Kreatif Teknologi</div>
+          <div class="exp-role">Full-Stack Developer</div>
+          <span class="exp-period">2023 – 2024</span>
+          <ul class="exp-list">
+            <li>Sistem manajemen rumah sakit: ASP.NET Core 6, PostgreSQL, Docker</li>
+            <li>Integrasi hardware (Scanner KTP, printer POS, gate); CI/CD GitHub Workflow</li>
+            <li>Optimasi API multi-modul untuk performa dan stabilitas</li>
+          </ul>
         </div>
+        <div class="exp-item">
+          <div class="exp-company">Saloka Theme Park</div>
+          <div class="exp-role">Programmer</div>
+          <span class="exp-period">2020 – 2023</span>
+          <ul class="exp-list">
+            <li>SalokaPark v2, Gate Entry System, POS, Inventory System</li>
+            <li>Integrasi: printer POS, gate otomatis, scanner tiket, kiosk</li>
+            <li>Maintenance 100+ perangkat; monitoring server harian</li>
+          </ul>
+        </div>
+        <div class="exp-item">
+          <div class="exp-company">Freelance Projects</div>
+          <div class="exp-role">Full-Stack Developer</div>
+          <span class="exp-period">2016 – 2019</span>
+          <ul class="exp-list">
+            <li>Sistem Rekrutmen, Hotel (Java), Pertanian, Surat Masuk/Keluar, Pendaftaran Sekolah Online</li>
+          </ul>
+        </div>
+        <div class="exp-item">
+          <div class="exp-company">IT Deployer — Kantor Imigrasi Bali, NTB &amp; Jakarta Timur</div>
+          <span class="exp-period">Sep – Des 2018</span>
+          <ul class="exp-list">
+            <li>Instalasi CentOS 7, aplikasi DPRI &amp; Dokim di kantor Imigrasi</li>
+            <li>Pengelolaan database; terlibat dalam proses pembuatan paspor digital</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="sec-label">Proyek Mandiri &amp; Unggulan</div>
+        <h2 class="sec-title">Proyek Terbaru</h2>
+        <div class="fp dark">
+          <div class="fp-badge">🌐 Live · ashanum.com · 2024–Sekarang</div>
+          <div class="fp-name">Ashanum.com — E-Commerce Platform</div>
+          <div class="fp-role">Founder &amp; Sole Developer (Full-Stack + DevOps)</div>
+          <div class="fp-desc">Membangun dari nol platform e-commerce production penuh secara mandiri — arsitektur backend REST API, sistem pembayaran Midtrans, manajemen produk &amp; pesanan, autentikasi pengguna, hingga seluruh infrastruktur: beli domain, konfigurasi DNS, setup VPS Linux, Docker Compose, Nginx reverse proxy, SSL HTTPS, dan go-live.</div>
+          <div class="fp-tags">
+            <span class="fp-tag">Node.js</span><span class="fp-tag">Express.js</span><span class="fp-tag">Prisma ORM</span><span class="fp-tag">PostgreSQL</span><span class="fp-tag">Midtrans API</span><span class="fp-tag">Docker</span><span class="fp-tag">Nginx</span><span class="fp-tag">Linux VPS</span><span class="fp-tag">SSL/HTTPS</span><span class="fp-tag">Domain &amp; DNS</span>
+          </div>
+        </div>
+        <div class="fp teal">
+          <div class="fp-badge">🏥 Enterprise HMS · 2024–Sekarang</div>
+          <div class="fp-name">QuilvianSystem — Hospital Management</div>
+          <div class="fp-role">Full-Stack Developer &amp; System Integrator</div>
+          <div class="fp-desc">Sistem manajemen rumah sakit enterprise lengkap — pendaftaran, rekam medis, antrian digital, kasir, manajemen obat, integrasi Scanner KTP, printer POS &amp; gate. Pipeline CI/CD otomatis.</div>
+          <div class="fp-tags">
+            <span class="fp-tag">ASP.NET Core 6</span><span class="fp-tag">Next.js</span><span class="fp-tag">PostgreSQL</span><span class="fp-tag">Docker</span><span class="fp-tag">GitHub Actions</span><span class="fp-tag">Scanner KTP</span>
+          </div>
+        </div>
+      </div>
+
     </div>
-    
-    <script>
-        function downloadPDF() {
-            // Metode 1: Print dialog (paling reliable)
-            window.print();
-            
-            // Informasi untuk user
-            setTimeout(() => {
-                alert('Cara menyimpan sebagai PDF:\n\n1. Pilih "Save as PDF" atau "Microsoft Print to PDF" sebagai printer\n2. Klik Save/Simpan\n3. Pilih lokasi penyimpanan\n4. Selesai!\n\nAtau tekan Ctrl+P (Windows) / Cmd+P (Mac) kapan saja untuk mencetak.');
-            }, 500);
-        }
-    </script>
+
+    <div class="side-col">
+
+      <div class="side-sec">
+        <div class="side-title">Keahlian Teknis</div>
+        <div class="skill-group">
+          <div class="sg-name">Backend</div>
+          <div class="skill-tags">
+            <span class="stag p">Node.js</span><span class="stag p">PHP/Laravel</span><span class="stag p">ASP.NET Core 6</span><span class="stag">Express.js</span><span class="stag">Prisma ORM</span><span class="stag">REST API</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <div class="sg-name">Database</div>
+          <div class="skill-tags">
+            <span class="stag p">PostgreSQL</span><span class="stag">MySQL</span><span class="stag">SQL Server</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <div class="sg-name">Frontend</div>
+          <div class="skill-tags">
+            <span class="stag">JavaScript</span><span class="stag">Next.js</span><span class="stag">jQuery</span><span class="stag">HTML/CSS</span><span class="stag">Bootstrap</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <div class="sg-name">DevOps &amp; Server</div>
+          <div class="skill-tags">
+            <span class="stag p">Docker</span><span class="stag p">Linux VPS</span><span class="stag p">Nginx</span><span class="stag">GitHub Actions</span><span class="stag">CI/CD</span><span class="stag">Apache</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <div class="sg-name">Integrasi &amp; Tools</div>
+          <div class="skill-tags">
+            <span class="stag">Midtrans API</span><span class="stag">Scanner KTP</span><span class="stag">Printer POS</span><span class="stag">Git</span><span class="stag">Postman</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <div class="sg-name">Networking</div>
+          <div class="skill-tags">
+            <span class="stag">Mikrotik</span><span class="stag">OpenWRT</span><span class="stag">VPN</span><span class="stag">RT/RW Net</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="side-sec">
+        <div class="side-title">Pendidikan</div>
+        <div class="edu-box">
+          <div class="edu-degree">D3 Manajemen Informatika</div>
+          <div class="edu-school">Universitas Nasional PASIM</div>
+          <div class="edu-year">2015</div>
+        </div>
+      </div>
+
+      <div class="side-sec">
+        <div class="side-title">Keunggulan</div>
+        <div class="str-grid">
+          <div class="str-item">⚡ End-to-End Dev</div>
+          <div class="str-item">🔧 HW/SW Integration</div>
+          <div class="str-item">🚀 Self-Hosted DevOps</div>
+          <div class="str-item">🔍 Analisis Sistem</div>
+          <div class="str-item">📦 Full Product Lifecycle</div>
+          <div class="str-item">🤝 Tim &amp; Mandiri</div>
+        </div>
+      </div>
+
+      <div class="side-sec">
+        <div class="side-title">Domain / Industri</div>
+        <div class="skill-tags">
+          <span class="stag">Healthcare/RS</span><span class="stag">E-Commerce</span><span class="stag">Theme Park</span><span class="stag">POS/Kasir</span><span class="stag">Ticketing</span><span class="stag">Imigrasi</span><span class="stag">Inventory</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="footer-bar">
+    <span class="mono">IKBAL YULIYANTO · Full-Stack Developer</span>
+    <span class="mono">ikbaly94@gmail.com · ashanum.com</span>
+  </div>
+</div>
+<script>
+window.addEventListener('load',()=>{
+  setTimeout(()=>{
+    const d=document.createElement('div');
+    d.style.cssText='position:fixed;bottom:20px;right:20px;background:#0d0d0d;color:#fff;padding:11px 18px;border-radius:6px;font-size:12px;font-family:sans-serif;z-index:999;opacity:.9;max-width:250px;line-height:1.5;';
+    d.innerHTML='💡 Klik <strong>Download/Print PDF</strong> → pilih <em>"Save as PDF"</em>';
+    document.body.appendChild(d);
+    setTimeout(()=>d.remove(),6000);
+  },800);
+});
+</script>
 </body>
 </html>
