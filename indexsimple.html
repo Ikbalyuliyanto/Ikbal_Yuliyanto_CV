@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CV Ikbal Yuliyanto — Job Portal Version</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#111;--sub:#333;--muted:#666;--accent:#0052cc;--green:#006644;--border:#ddd;--bg:#f8f9fa;--white:#fff}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'IBM Plex Sans',sans-serif;background:var(--bg);color:var(--ink);padding:24px 16px 48px;font-size:14px;line-height:1.6}
+.pbar{position:fixed;top:16px;right:16px;z-index:99}
+.pbtn{background:var(--accent);color:#fff;border:none;padding:9px 20px;border-radius:4px;font-size:12.5px;font-weight:600;cursor:pointer;font-family:'IBM Plex Sans',sans-serif}
+.pbtn:hover{background:#003d99}
+.cv{max-width:800px;margin:0 auto;background:var(--white);border:1px solid var(--border);box-shadow:0 4px 20px rgba(0,0,0,.08)}
+/* TOP BAR */
+.topbar{background:var(--accent);color:#fff;padding:28px 36px 24px}
+.topbar h1{font-size:28px;font-weight:700;letter-spacing:-.3px;margin-bottom:4px}
+.topbar .role{font-size:14px;font-weight:400;opacity:.85;margin-bottom:12px}
+.topbar .meta{display:flex;flex-wrap:wrap;gap:6px 20px;font-size:12px;opacity:.85}
+.topbar .meta a{color:#fff;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.4)}
+.avail{display:inline-block;background:#006644;color:#fff;font-size:11px;font-weight:600;padding:4px 12px;border-radius:3px;margin-top:10px;letter-spacing:.06em}
+/* BODY */
+.cvbody{padding:28px 36px}
+/* SECTION */
+.sec{margin-bottom:26px}
+.sec:last-child{margin-bottom:0}
+.sh{font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);border-bottom:2px solid var(--accent);padding-bottom:5px;margin-bottom:14px}
+/* SUMMARY */
+.summary{font-size:13.5px;color:var(--sub);line-height:1.75}
+/* EXP */
+.ej{margin-bottom:18px}
+.ej:last-child{margin-bottom:0}
+.ej-top{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:4px;margin-bottom:2px}
+.ej-company{font-size:14px;font-weight:700;color:var(--ink)}
+.ej-period{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);background:var(--bg);padding:2px 8px;border-radius:3px}
+.ej-role{font-size:12.5px;font-weight:600;color:var(--accent);margin-bottom:6px}
+.ej ul{margin-left:16px;color:var(--sub);font-size:13px}
+.ej ul li{margin-bottom:4px;line-height:1.55}
+/* PROJECTS */
+.pj{background:var(--bg);border:1px solid var(--border);border-left:3px solid var(--accent);padding:14px 16px;margin-bottom:12px;border-radius:0 4px 4px 0}
+.pj:last-child{margin-bottom:0}
+.pj-name{font-size:14px;font-weight:700;color:var(--ink);margin-bottom:2px}
+.pj-role{font-size:12px;font-weight:600;color:var(--accent);margin-bottom:6px}
+.pj-desc{font-size:12.5px;color:var(--sub);line-height:1.6;margin-bottom:8px}
+.tags{display:flex;flex-wrap:wrap;gap:5px}
+.tag{background:#e8f0fe;color:#0052cc;font-size:11px;padding:2px 9px;border-radius:3px;font-family:'IBM Plex Mono',monospace}
+.tag.green{background:#e3f5ec;color:#006644}
+/* SKILLS 2-COL */
+.skills-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px 24px}
+.sg{margin-bottom:8px}
+.sg-label{font-size:11.5px;font-weight:700;color:var(--ink);margin-bottom:5px}
+.sg-val{font-size:12.5px;color:var(--sub);line-height:1.6}
+/* EDU */
+.edu{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap}
+.edu-deg{font-size:14px;font-weight:700;color:var(--ink)}
+.edu-school{font-size:12.5px;color:var(--muted)}
+.edu-year{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted)}
+/* FOOTER */
+.cvfoot{background:var(--bg);border-top:1px solid var(--border);padding:12px 36px;display:flex;justify-content:space-between;font-size:11px;color:var(--muted);font-family:'IBM Plex Mono',monospace}
+@media print{
+  body{background:white;padding:0}
+  .pbar{display:none}
+  .cv{box-shadow:none;border:none;max-width:100%}
+  .topbar{padding:22px 28px 18px}
+  .topbar h1{font-size:24px}
+  .cvbody{padding:22px 28px}
+  .sec{margin-bottom:18px}
+  -webkit-print-color-adjust:exact;print-color-adjust:exact
+}
+@media(max-width:600px){
+  .topbar{padding:22px 20px 18px}
+  .cvbody{padding:20px}
+  .skills-grid{grid-template-columns:1fr}
+  .pbar{display:none}
+}
+</style>
+</head>
+<body>
+<div class="pbar">
+  <button class="pbtn" onclick="window.print()">⬇ Download PDF</button>
+</div>
+<div class="cv">
+
+  <!-- TOP -->
+  <div class="topbar">
+    <h1>Ikbal Yuliyanto</h1>
+    <div class="role">Full-Stack / Backend Developer · 7+ Tahun Pengalaman</div>
+    <div class="meta">
+      <span>📱 0895-3633-25620 / 0851-7222-5707</span>
+      <span>📧 ikbaly94@gmail.com</span>
+      <span>🌐 <a href="https://ashanum.com">ashanum.com</a></span>
+      <span>🔗 <a href="https://ikbalyuliyanto.github.io/Ikbal_Yuliyanto_CV/">Portfolio</a></span>
+    </div>
+    <div class="avail">✅ OPEN TO WORK</div>
+  </div>
+
+  <div class="cvbody">
+
+    <!-- SUMMARY -->
+    <div class="sec">
+      <div class="sh">Ringkasan</div>
+      <div class="summary">
+        Developer berpengalaman 7+ tahun membangun sistem skala enterprise dari nol hingga production — sistem rumah sakit, POS, ticketing, inventory, dan e-commerce. Mahir backend (Node.js, PHP/Laravel, ASP.NET Core 6), database (PostgreSQL, MySQL, SQL Server), DevOps (Linux VPS, Docker, Nginx, CI/CD), serta integrasi hardware (Scanner KTP, printer POS, gate, kiosk). Terbukti mampu mengelola server production mandiri.
+      </div>
+    </div>
+
+    <!-- PENGALAMAN -->
+    <div class="sec">
+      <div class="sh">Pengalaman Kerja</div>
+
+      <div class="ej">
+        <div class="ej-top">
+          <span class="ej-company">PT Benari Solusindo Sejahtera</span>
+          <span class="ej-period">2024 – Sekarang</span>
+        </div>
+        <div class="ej-role">Full-Stack Developer &amp; System Integrator</div>
+        <ul>
+          <li>Membangun QuilvianSystem — HMS lengkap: pendaftaran, rekam medis, antrian, kasir, manajemen obat</li>
+          <li>Integrasi Scanner KTP, printer POS, gate elektronik</li>
+          <li>REST API ASP.NET Core 6 + PostgreSQL; frontend Next.js; CI/CD GitHub Actions + Docker</li>
+        </ul>
+      </div>
+
+      <div class="ej">
+        <div class="ej-top">
+          <span class="ej-company">Sokka Kreatif Teknologi</span>
+          <span class="ej-period">2023 – 2024</span>
+        </div>
+        <div class="ej-role">Full-Stack Developer</div>
+        <ul>
+          <li>Sistem manajemen rumah sakit — ASP.NET Core 6, PostgreSQL, Docker</li>
+          <li>Integrasi hardware (Scanner KTP, printer POS, gate); CI/CD GitHub Workflow</li>
+        </ul>
+      </div>
+
+      <div class="ej">
+        <div class="ej-top">
+          <span class="ej-company">Saloka Theme Park</span>
+          <span class="ej-period">2020 – 2023</span>
+        </div>
+        <div class="ej-role">Programmer</div>
+        <ul>
+          <li>SalokaPark v2, Gate Entry System, POS, Inventory System</li>
+          <li>Integrasi hardware; maintenance 100+ perangkat; monitoring server harian</li>
+        </ul>
+      </div>
+
+      <div class="ej">
+        <div class="ej-top">
+          <span class="ej-company">Freelance &amp; Proyek Mandiri</span>
+          <span class="ej-period">2016 – 2019</span>
+        </div>
+        <div class="ej-role">Full-Stack Developer</div>
+        <ul>
+          <li>Sistem Rekrutmen, Hotel, Pertanian, Surat Masuk/Keluar, Pendaftaran Sekolah Online</li>
+          <li>IT Deployer Kantor Imigrasi (Bali, NTB, Jakarta Timur) — instalasi CentOS 7, DPRI &amp; Dokim</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- PROYEK -->
+    <div class="sec">
+      <div class="sh">Proyek Unggulan</div>
+
+      <div class="pj">
+        <div class="pj-name">Ashanum.com — E-Commerce Platform</div>
+        <div class="pj-role">Founder &amp; Sole Developer (Full-Stack + DevOps) · 2024–Sekarang · ashanum.com</div>
+        <div class="pj-desc">Platform e-commerce production mandiri — backend API, pembayaran Midtrans, manajemen produk &amp; pesanan, autentikasi, hosting VPS Linux, Docker + Nginx, SSL, domain sendiri.</div>
+        <div class="tags">
+          <span class="tag">Node.js</span><span class="tag">Express.js</span><span class="tag">Prisma ORM</span><span class="tag">PostgreSQL</span><span class="tag green">Midtrans API</span><span class="tag">Docker</span><span class="tag">Nginx</span><span class="tag">Linux VPS</span>
+        </div>
+      </div>
+
+      <div class="pj">
+        <div class="pj-name">QuilvianSystem — Hospital Management System</div>
+        <div class="pj-role">Full-Stack Developer · Enterprise · 2024–Sekarang</div>
+        <div class="pj-desc">HMS enterprise lengkap: pendaftaran, rekam medis, antrian, kasir, obat, integrasi hardware.</div>
+        <div class="tags">
+          <span class="tag">ASP.NET Core 6</span><span class="tag">Next.js</span><span class="tag">PostgreSQL</span><span class="tag">Docker</span><span class="tag green">GitHub Actions</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- KEAHLIAN -->
+    <div class="sec">
+      <div class="sh">Keahlian Teknis</div>
+      <div class="skills-grid">
+        <div class="sg">
+          <div class="sg-label">Backend</div>
+          <div class="sg-val">Node.js, Express.js, PHP, Laravel, ASP.NET Core 6, Prisma ORM, REST API</div>
+        </div>
+        <div class="sg">
+          <div class="sg-label">Database</div>
+          <div class="sg-val">PostgreSQL, MySQL, SQL Server</div>
+        </div>
+        <div class="sg">
+          <div class="sg-label">DevOps &amp; Server</div>
+          <div class="sg-val">Linux VPS, Docker, Nginx, Apache, GitHub Actions, CI/CD</div>
+        </div>
+        <div class="sg">
+          <div class="sg-label">Frontend</div>
+          <div class="sg-val">JavaScript, Next.js, jQuery, HTML/CSS, Bootstrap</div>
+        </div>
+        <div class="sg">
+          <div class="sg-label">Integrasi &amp; Payment</div>
+          <div class="sg-val">Midtrans API, Scanner KTP, Printer POS, Gate, Kiosk</div>
+        </div>
+        <div class="sg">
+          <div class="sg-label">Tools &amp; Lainnya</div>
+          <div class="sg-val">Git, Postman, VS Code, Docker Compose, Mikrotik, VPN</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PENDIDIKAN -->
+    <div class="sec">
+      <div class="sh">Pendidikan</div>
+      <div class="edu">
+        <div>
+          <div class="edu-deg">D3 Manajemen Informatika</div>
+          <div class="edu-school">Universitas Nasional PASIM</div>
+        </div>
+        <span class="edu-year">2015</span>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="cvfoot">
+    <span>Ikbal Yuliyanto · ikbaly94@gmail.com</span>
+    <span>ashanum.com</span>
+  </div>
+</div>
+<script>
+window.addEventListener('load',()=>{
+  setTimeout(()=>{
+    const d=document.createElement('div');
+    d.style.cssText='position:fixed;bottom:16px;right:16px;background:#111;color:#fff;padding:10px 16px;border-radius:4px;font-size:12px;font-family:sans-serif;z-index:99;line-height:1.5;max-width:230px;';
+    d.innerHTML='💡 Klik <strong>Download PDF</strong> → pilih <em>"Save as PDF"</em>';
+    document.body.appendChild(d);
+    setTimeout(()=>d.remove(),6000);
+  },600);
+});
+</script>
+</body>
+</html>
