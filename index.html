@@ -1,4 +1,6 @@
-<!DOCTYPE html>
+using System.Runtime.InteropServices;
+
+< !DOCTYPE html>
 <html lang="id">
 <head>
 <meta charset="UTF-8">
@@ -97,8 +99,12 @@ body{font-family:'DM Sans',sans-serif;background:#ece9e0;color:var(--ink);min-he
 </head>
 <body>
 <div class="print-bar">
-  <button class="print-btn pdf" id="downloadPdfBtn" onclick="downloadPdf()">⬇ Download PDF</button>
-  <button class="print-btn" id="printImgBtn" onclick="printAsImage()">🖨 Print (sesuai tampilan)</button>
+  <button class="print-btn" id="printImgBtn" onclick="printAsImage()">🖨 Print & Download</button>
+  <button class="print-btn pdf"
+        id="downloadPdfBtn"
+        onclick="window.location.href='https://ikbalyuliyanto.github.io/Ikbal_Yuliyanto_CV/indexsimple.html'">
+    CV Simple
+</button>
 </div>
 <div class="paper" id="cvPaper">
   <div class="header">
